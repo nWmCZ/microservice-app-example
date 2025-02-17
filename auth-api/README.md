@@ -9,7 +9,7 @@ The JSON object structure is following:
 ```json
 {
     "username": "admin",
-    "password": "admin",
+    "password": "admin"
 }
 ```
 
@@ -32,12 +32,7 @@ Following users are hardcoded for you:
 | janed     | ddd       |
 
 ## Building and running
-
-1. Update the dependencies with [glide](https://github.com/Masterminds/glide)
-```
-glide up
-```
-2. Compile a binary and then run it
+1. Compile a binary and then run it
 ```
 go build
 AUTH_API_PORT=8000 USERS_API_ADDRESS=http://users-api:8082 JWT_SECRET=foo ./auth-api

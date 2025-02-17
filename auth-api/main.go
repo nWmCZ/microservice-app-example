@@ -7,12 +7,12 @@ import (
 	"os"
 	"time"
 
-        "go.elastic.co/apm"
-	"go.elastic.co/apm/module/apmecho"
-        "go.elastic.co/apm/module/apmhttp"
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
-	jwt "github.com/dgrijalva/jwt-go"
+    "go.elastic.co/apm"
+    echo "github.com/labstack/echo/v4"
+    "github.com/labstack/echo/v4/middleware"
+	"go.elastic.co/apm/module/apmechov4/v2"
+    "go.elastic.co/apm/module/apmhttp/v2"
+	jwt "github.com/golang-jwt/jwt"
 )
 
 var (
@@ -45,7 +45,7 @@ func main() {
 	}
 
 	e := echo.New()
-	e.Use(apmecho.Middleware())
+	e.Use(apmechov4.Middleware())
 
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
